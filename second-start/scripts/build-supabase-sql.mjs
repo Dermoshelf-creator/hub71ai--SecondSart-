@@ -1,0 +1,12 @@
+import { readFileSync, writeFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+const jobs = JSON.parse(readFileSync(new URL('../data/jobs_with_commute_times.json', import.meta.url), 'utf8'));
+const property = JSON.parse(readFileSync(new URL('../data/property_dump.json', import.meta.url), 'utf8'));
+const version = createHash('sha256').update(JSON.stringify([jobs, property])).digest('hex').slice(0, 16);
+const payload = JSON.stringify({ jobs: jobs.jobs, neighborhoods: property.neighborhoods, sources: property.sources });
+if (payload.includes('$second_start_json$')) throw new Error('SQL delimiter appears in dataset');
+const seed = `-- Snapshot ${version}: ${jobs.jobs.length} jobs, ${property.neighborhoods.length} neighborhoods.\nselect public.second_start_import_dataset($second_start_json$${payload}$second_start_json$::jsonb, '${version}');\n`;
+writeFileSync(new URL('../supabase/seed.sql', import.meta.url), seed);
+const schema = readFileSync(new URL('../supabase/migrations/202610020001_second_start.sql', import.meta.url), 'utf8');
+writeFileSync(new URL('../supabase/bootstrap.sql', import.meta.url), `-- Run this entire file once in the Supabase SQL Editor.\n-- It creates the schema and imports the supplied snapshots atomically.\nbegin;\n${schema}\n${seed}commit;\n`);
+console.log(`Supabase bootstrap generated: ${jobs.jobs.length} jobs, ${property.neighborhoods.length} neighborhoods, version ${version}`);

@@ -1,0 +1,29 @@
+SECOND START — 3 DAKİKALIK DEMO (SLAYT YOK)
+
+0:00–0:20 — Problem
+“Abu Dhabi'ye gelen bir ailede taşınma kararı çoğu zaman bir kişinin işiyle veriliyor. Diğer kişinin kariyeri, evin adresi ve okul çıkış saatleri yüzünden arka plana düşebiliyor. Second Start bu ikinci kariyere de taşınma kararında yer açıyor.”
+
+0:20–1:05 — Bir gerçek yolculuk
+Webden Sarah: evi henüz yok; primary teacher; aile vizesi; 08:00–15:00 kesin koşul; 30 dakika sürüş; 2 BHK; 110,000 AED yıllık bütçe.
+Doğal cümleyle saat cevabı ver ve OpenAI'nin 08:00–15:00 olarak yapılandırdığını göster. OPENAI_API_KEY etkin ve gerçek çağrı denenmiş olmalı. Anahtar yoksa AI çalışıyor deme; önce bağlantıyı tamamla.
+WhatsApp bağlandıysa telefon mesajıyla bir cevabı göster; bütün soruları telefonda tamamlayarak 3 dakikayı tüketme.
+
+1:05–1:45 — Evi ve işi aynı kararda karşılaştır
+Semt karşılaştırma satırları: Khalifa City, Masdar City, Shakhbout City. Kira aralığı, bütçe durumu, iki yönün de ulaşım tercihine uyan potansiyel iş sayısı.
+“En ucuz kirayı veya en çok ilanı tek başına seçmiyoruz. Sarah'nın gerçek gününü birlikte düşünmesine yardım ediyoruz.”
+Khalifa City için View jobs.
+
+1:45–2:20 — Çalışan sonucu göster
+İş kartında vacancy kaynağı, gidiş/dönüş, Confirm hours: finish by 15:00 uyarısı.
+“Bu veri iş saatlerini doğrulamıyor; 15:00 uygunluğunu uydurmuyoruz. 18:00 dönüş snapshot'ını 15:00 dönüş diye göstermiyoruz.”
+Kaynak ilan bağlantısını açmak isteğe bağlı; değerlendirmede sayfanın hâlâ açık olduğunu kendin kontrol et.
+
+2:20–2:45 — Verinin farkı
+60 küratörlü ilan; 10 semt × 3 ev boyutu; 600 iş-semt çifti, her biri için iki yön alanı. 1,060 geçerli rota ve adresi eksik 140 alan açıkça korunuyor.
+1/2 BHK Rabdan proxy'si ve 3 BHK townhouse/villa ayrımını uygun kartta göster.
+Veri eşsizliği iddiasını “bizim birleştirdiğimiz, kaynak/eksiklik/güven içeren karar dataset'i” diye anlat; tüm emlak fiyatlarını tek başımıza scrape ettik deme.
+
+2:45–3:00 — Keşfedilen yeni problem
+“Relocation sadece bir çalışanın işe yakın evi değil; taşınan çiftte ikinci kariyerin ve günlük aile saatlerinin korunması. Bir ilan uygun görünse bile okul çıkışı ve dönüş saati bilinmiyorsa gerçek hayat uyumu hâlâ çözülmemiş olabilir.”
+
+Önceden hazırla: canlı dış erişim, gerçek AI çağrısı, Sarah yolculuğu, WhatsApp Sandbox join (kullanılacaksa), yedek web demo, GitHub final SHA.
